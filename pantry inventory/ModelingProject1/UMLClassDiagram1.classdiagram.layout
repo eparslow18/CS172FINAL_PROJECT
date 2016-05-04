@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="UMLClassDiagram1">
+  <logicalClassDesignerModelMoniker Id="49e17617-a70e-4ea8-9c3d-d8591cb2e5a3" />
+  <nestedChildShapes>
+    <classShape Id="ae7da1f7-37d8-4487-be66-26637d62c726" absoluteBounds="2.125, 0.75, 1.5, 2.0234374503294625" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="d9e83160-2f66-4a5f-beaf-dd6816b353e9" LastKnownName="pantryCategories" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="4bb26352-c969-44ea-9f1c-87ee951c61eb" absoluteBounds="2.14, 1.1400000000000001, 1.4700000000000002, 0.36132811258236563" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="6d49405a-acea-4c8f-bc65-6375168cfcb8" absoluteBounds="2.14, 1.5113281125823657, 1.4700000000000002, 1.162109337747097" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3560acff-5c9c-4d8b-b0c8-664044b3d5e4" absoluteBounds="3.875, 0.5, 1.5, 1.2226562251647315" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="5f593689-9fab-487d-8efa-aad919267455" LastKnownName="Beverage" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="e6800733-7dbc-43ed-a740-e961bd2d558e" absoluteBounds="3.8899999999999997, 0.89000000000000012, 1.4700000000000002, 0.52148435761531187" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="f2ca8ce7-ced4-42fa-b420-dfeb84820cae" absoluteBounds="3.89, 1.421484357615312, 1.4700000000000002, 0.20117186754941951" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</logicalClassDesignerDiagram>

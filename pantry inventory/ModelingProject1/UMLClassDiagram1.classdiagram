@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="49e17617-a70e-4ea8-9c3d-d8591cb2e5a3" name="UMLClassDiagram1" linkedPackageId="b986f086-a960-4511-9d37-ddf97366ec69" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="70f69121-b10c-4f73-83b5-a0a756acd293">
+      <profileInstance Id="6f9b546e-00ff-4e3f-9447-9e70313e1148" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="b54f00c9-89bb-40e9-b22b-6381dcd49061">
+      <profileInstance Id="8f74edf1-5b89-4159-9011-61d70c873668" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d9e83160-2f66-4a5f-beaf-dd6816b353e9" name="pantryCategories" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="212293ab-598c-453e-a809-0de6d579d9f5" />
+        <ownedAttributesInternal>
+          <property Id="6476cd42-0663-4c62-8cd7-08560c1be302" name="template &lt;typename T&gt;;" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="33cd8069-48d1-474a-8d72-67968d68e604" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="049058bc-57f4-447e-835a-848902b65cfe" name="pantryInventory" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="61edf807-bcbc-4cec-a9ae-287cf95a5ea8" />
+          </operation>
+          <operation Id="4b3868f3-d5dd-4d62-bd34-1bef19e0c6e7" name="void addItemCount" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="11fa2687-62dd-46a5-8d24-38064e666232" />
+          </operation>
+          <operation Id="9dc97f3e-f1b6-42e2-a501-01d49e788682" name="void addNewItem" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9e2e9212-186f-4de8-aaa9-6eac8117eb2d" />
+          </operation>
+          <operation Id="760ad2bc-25bf-4842-8541-0be9949e27ce" name="void removeItem" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f9a2b773-c3a3-45da-aafa-6cfe5bbb300a" />
+          </operation>
+          <operation Id="6cf400c3-6654-4b94-9f7d-a00c4b528522" name="void totalInventory" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="bdeb3eb8-d58d-4002-b57e-b958a84f03d4" />
+          </operation>
+          <operation Id="300ee16d-bd60-4c30-b40c-d00101fbaa7f" name="void inventoryByCategory" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1f41386c-1027-4ebb-84d3-6c949e72cf90" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="5f593689-9fab-487d-8efa-aad919267455" name="Beverage" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ec7906b7-1874-42ae-8fa0-b4b4fa993d55" />
+        <ownedAttributesInternal>
+          <property Id="ef17efdd-d8f2-46f1-a57b-b83ac28f07c7" name="int count;" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="584dee7d-57d1-4ac1-a7e5-a3be89d803cd" />
+          </property>
+          <property Id="02b08c7c-bbd8-40b8-a3af-fee85f4d3970" name="string item;" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="aadbbe9e-142b-4ce9-8063-8456e9926f6d" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="b986f086-a960-4511-9d37-ddf97366ec69" name="ModelingProject1">
+    <elementDefinition Id="7c862b51-824e-4852-92eb-cd50f0f4455b" />
+  </package>
+</logicalClassDesignerModel>
