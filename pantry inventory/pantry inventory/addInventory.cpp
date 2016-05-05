@@ -1,6 +1,8 @@
+
+
 #include "PANTRY.h"
 
-void addInventory(pantryInventory p)
+void addInventory(pantryCategory p)
 {
 	
 	cout << "Of the following categories, which would you like to add to?" << endl;
@@ -20,24 +22,49 @@ void addInventory(pantryInventory p)
 		cout << "Not a valid option.  Please choose again ";
 		cin >> choice; //add if statement to check for symbols and chars
 	}
+	Beverage bev;
+	Bread bread;
+	Breakfast bfast;
+	Dessert yum;
+	Fruit fruit;
+	Meat meat;
+	Snack snack;
+	Vegetables veg;
+	string item;
 
 	switch (choice % 9)
 	{
-	case 1:; //p.addNewItem(Category Beverage)
+	case 1: cout << "enter a beverage: ";
+		cin >> item;
+		p.addNewItem(bev, item);
 		break;
-	case 2: ;
+	case 2: cout << "enter a bread: ";
+		cin >> item;
+		p.addNewItem(bread, item);
 		break;
-	case 3: ;
+	case 3: cout << "enter a breakfast: ";
+		cin >> item;
+		p.addNewItem(bfast, item);;
 		break;
-	case 4: ;
+	case 4: cout << "enter a dessert: ";
+		cin >> item;
+		p.addNewItem(yum, item);;
 		break;
-	case 5: ;
+	case 5: cout << "enter a fruit: ";
+		cin >> item;
+		p.addNewItem(fruit, item);;
 		break;
-	case 6: ;
+	case 6: cout << "enter a meat: ";
+		cin >> item;
+		p.addNewItem(meat, item);;
 		break;
-	case 7: ;
+	case 7: cout << "enter a snack: ";
+		cin >> item;
+		p.addNewItem(snack, item);;
 		break;
-	case 8: ;
+	case 8: cout << "enter a vegetable: ";
+		cin >> item;
+		p.addNewItem(veg, item);;
 		break;
 	default: break;
 	}

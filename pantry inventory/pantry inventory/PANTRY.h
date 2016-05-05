@@ -5,7 +5,7 @@
 #include <iostream>
 using namespace std;
 
-template <typename Category>
+
 class pantryCategory
 {
 private:
@@ -14,16 +14,66 @@ private:
 public:
 	pantryCategory(); //parameters could use inheritance
 	void addItemCount();
-	void addNewItem();
+	void addNewItem(const pantryCategory& p, string i); //use polymorphism
 	void removeItem();
 	void totalInventory();
 	void inventoryByCategory();
 };
 
-class Beverage
+class Beverage : public pantryCategory
 {
-
+private:
+	int bevCount;
+	string bevItem;
 };
 
+class Bread : public pantryCategory
+{
+private:
+	int breadCount;
+	string breadItem;
+};
+
+class Breakfast : public pantryCategory
+{
+private:
+	int breakCount;
+	string breakItem;
+};
+
+class Dessert : public pantryCategory
+{
+private:
+	int dessCount;
+	string dessItem;
+};
+
+class Fruit : public pantryCategory
+{
+private:
+	int fruitCount;
+	string fruitItem;
+};
+
+class Meat : public pantryCategory
+{
+private:
+	int meatCount;
+	string meatItem;
+};
+
+class Snack : public pantryCategory
+{
+private:
+	int snackCount;
+	string snackItem;
+};
+
+class Vegetables : public pantryCategory
+{
+private:
+	int vegCount;
+	string vegItem;
+};
 
 #endif

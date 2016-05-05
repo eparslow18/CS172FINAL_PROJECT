@@ -1,9 +1,11 @@
+
+
 #include "PANTRY.h"
 
-void removeInventory(pantryInventory p)
+void removeInventory(pantryCategory p)
 {
 
 	cout << "What item would you like to remove?" << endl;
-	string 
+	
 	
 }

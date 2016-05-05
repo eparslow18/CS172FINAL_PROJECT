@@ -1,3 +1,4 @@
+
 #include "PANTRY.h"
 
 pantryCategory::pantryCategory()
@@ -9,7 +10,7 @@ void pantryCategory::addItemCount()
 {
 
 }
-void pantryCategory::addNewItem()
+void pantryCategory::addNewItem(const pantryCategory& p, string i)
 {
 
 }

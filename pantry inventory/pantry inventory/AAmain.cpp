@@ -21,8 +21,23 @@ void clearPantry(pantryCategory p);
 
 int main()
 {
-	ofstream pantry;
+	
 	pantryCategory pantry1;
+
+	FILE categories[8] = { "Beverage.txt", "Bread.txt", "Breakfast.txt", "Dessert.txt", "Fruit.txt",
+	"Meat.txt", "Snack.txt", "Vegetables.txt" };
+
+	ofstream *pantry = new ofstream[8];
+	
+
+	for (int i = 0; i < 8; i++)
+	{
+		//pantry[i].open(categories[i]);
+	}
+
+
+
+
 
 	cout << "Welcome to your pantry! These are your options:" << endl << endl;
 	cout << "1.) add inventory" << endl;

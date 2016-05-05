@@ -142,7 +142,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="AAmain.cpp" />
     <ClCompile Include="PANTRY.cpp" />
     <ClCompile Include="addInventory.cpp" />
     <ClCompile Include="removeInventory.cpp" />
