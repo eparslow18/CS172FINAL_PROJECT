@@ -3,7 +3,10 @@
 #define PANTRY_H_
 #include <string>
 #include <iostream>
+#include <stdio.h>
 using namespace std;
+
+
 
 
 class pantryCategory
@@ -16,8 +19,6 @@ public:
 	void addItemCount();
 	void addNewItem(const pantryCategory& p, string i); //use polymorphism
 	void removeItem();
-	void totalInventory();
-	void inventoryByCategory();
 };
 
 class Beverage : public pantryCategory
@@ -75,5 +76,22 @@ private:
 	int vegCount;
 	string vegItem;
 };
+
+
+
+void addInventory(pantryCategory p);
+void removeInventory(pantryCategory p);
+void listPantry(pantryCategory p);
+void clearPantry(pantryCategory p);
+void menu(pantryCategory p);
+
+extern FILE *beverageP;
+extern FILE *breadP;
+extern FILE *breakfastP;
+extern FILE *dessertP;
+extern FILE *meatP;
+extern FILE *snackP;
+extern FILE *vegetableP;
+extern FILE *fruitP;
 
 #endif

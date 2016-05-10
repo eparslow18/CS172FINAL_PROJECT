@@ -22,7 +22,7 @@ void addInventory(pantryCategory p)
 		cout << "Not a valid option.  Please choose again ";
 		cin >> choice; //add if statement to check for symbols and chars
 	}
-	Beverage bev;
+	Beverage bev; //created object for polymorphism
 	Bread bread;
 	Breakfast bfast;
 	Dessert yum;
