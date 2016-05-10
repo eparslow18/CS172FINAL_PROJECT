@@ -4,86 +4,96 @@
 #include <string>
 #include <iostream>
 #include <stdio.h>
+#include <vector>
 using namespace std;
-
-
-
 
 class pantryCategory
 {
 private:
-	int totalCount;  //Used for entire pantry
-	string universalItem; //Used for entire pantry
+	static int totalCount;  //Used for entire pantry
 public:
 	pantryCategory(); //parameters could use inheritance
-	void addItemCount();
-	void addNewItem(const pantryCategory& p, string i); //use polymorphism
-	void removeItem();
+	void vectorOfItems(pantryCategory* p);
+	void addNewItem(string i, int q, FILE* f); //use polymorphism
+	void removeItem(string i, FILE* f, pantryCategory* p);
+
+	//Stuff added by prof bell --- figure it out and delete later
+	
+	virtual string getItem() = 0;
 };
 
 class Beverage : public pantryCategory
 {
 private:
-	int bevCount;
 	string bevItem;
+	//Delete below here --- added by Prof M
+public:
+	string getItem() { return bevItem; }
 };
 
 class Bread : public pantryCategory
 {
 private:
-	int breadCount;
 	string breadItem;
+public:
+	string getItem() { return breadItem; }
 };
 
 class Breakfast : public pantryCategory
 {
 private:
-	int breakCount;
 	string breakItem;
+public:
+	string getItem() { return breakItem; }
 };
 
 class Dessert : public pantryCategory
 {
 private:
-	int dessCount;
 	string dessItem;
+public:
+	string getItem() { return dessItem; }
 };
 
 class Fruit : public pantryCategory
 {
 private:
-	int fruitCount;
 	string fruitItem;
+public:
+	string getItem() { return fruitItem; }
 };
 
 class Meat : public pantryCategory
 {
 private:
-	int meatCount;
 	string meatItem;
+public:
+	string getItem() { return meatItem; }
 };
 
 class Snack : public pantryCategory
 {
 private:
-	int snackCount;
 	string snackItem;
+public:
+	string getItem() { return snackItem; }
 };
 
 class Vegetables : public pantryCategory
 {
 private:
-	int vegCount;
 	string vegItem;
+public:
+	string getItem() { return vegItem; }
 };
 
 
 
-void addInventory(pantryCategory p);
-void removeInventory(pantryCategory p);
-void listPantry(pantryCategory p);
-void clearPantry(pantryCategory p);
-void menu(pantryCategory p);
+void addInventory(pantryCategory* p);
+void removeInventory(pantryCategory* p);
+void listPantry(pantryCategory* p);
+void clearPantry(pantryCategory* p);
+void menu(pantryCategory* p);
 
 extern FILE *beverageP;
 extern FILE *breadP;

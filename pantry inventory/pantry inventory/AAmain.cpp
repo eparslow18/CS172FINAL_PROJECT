@@ -21,8 +21,9 @@ FILE *snackP;
 FILE *vegetableP;
 FILE *fruitP;
 
-void menu(pantryCategory p)
+void menu(pantryCategory* p)
 {
+	cout << endl << endl << "*****MENU*****" << endl << endl;
 	beverageP = fopen("Beverage.txt", "a+");
 	breadP = fopen("Bread.txt", "a+");
 	breakfastP = fopen("Breakfast.txt", "a+");
@@ -67,8 +68,8 @@ void menu(pantryCategory p)
 int main()
 {
 	
-	pantryCategory pantry1;
-
+	pantryCategory* pantry1 = NULL;
+	
 	cout << "Welcome to your pantry! These are your options:" << endl << endl;
 	
 	menu(pantry1);

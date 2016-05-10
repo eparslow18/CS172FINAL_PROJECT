@@ -1,6 +1,6 @@
 #include "PANTRY.h"
 
-void clearPantry(pantryCategory p)
+void clearPantry(pantryCategory* p) //FINISHED
 {
 
 	cout << "Are you sure you would you like to clear the pantry?" << endl;
@@ -17,14 +17,16 @@ void clearPantry(pantryCategory p)
 
 	if (answer == 'y')
 	{
-		fflush(beverageP); //what the hell
-		remove("Bread.txt");
-		remove("Breakfast.txt");
-		remove("Dessert.txt");
-		remove("Fruit.txt");
-		remove("Meat.txt");
-		remove("Snack.txt");
-		remove("Vegetables.txt");
+		beverageP = fopen("Beverage.txt", "w+");
+		breadP = fopen("Bread.txt", "w+");
+		breakfastP = fopen("Breakfast.txt", "w+");
+		dessertP = fopen("Dessert.txt", "w+");
+		fruitP = fopen("Fruit.txt", "w+");
+		meatP = fopen("Meat.txt", "w+");
+		snackP = fopen("Snack.txt", "w+");
+		vegetableP = fopen("Vegetables.txt", "w+");
+
+
 		
 
 		cout << "pantry cleared, returning to menu . . . " << endl << endl;

@@ -2,7 +2,7 @@
 
 #include "PANTRY.h"
 
-void addInventory(pantryCategory p)
+void addInventory(pantryCategory* p)
 {
 	
 	cout << "Of the following categories, which would you like to add to?" << endl;
@@ -22,51 +22,64 @@ void addInventory(pantryCategory p)
 		cout << "Not a valid option.  Please choose again ";
 		cin >> choice; //add if statement to check for symbols and chars
 	}
-	Beverage bev; //created object for polymorphism
-	Bread bread;
-	Breakfast bfast;
-	Dessert yum;
-	Fruit fruit;
-	Meat meat;
-	Snack snack;
-	Vegetables veg;
+	cout << "Enter the quantity of item you would like to add: ";
+	int quantity;
+	cin >> quantity; //loop to check for symbols and chars
 	string item;
 
 	switch (choice % 9)
 	{
-	case 1: cout << "enter a beverage: ";
-		cin >> item;
-		p.addNewItem(bev, item);
+	case 1:
+		p = new Beverage;
+		cout << "enter a beverage: ";
+		getline(cin, item);
+		p->addNewItem(item, quantity, beverageP);
 		break;
-	case 2: cout << "enter a bread: ";
-		cin >> item;
-		p.addNewItem(bread, item);
+	case 2: 
+		p = new Bread;
+		cout << "enter a bread: ";
+		getline(cin, item);
+		p->addNewItem(item, quantity, breadP);
 		break;
-	case 3: cout << "enter a breakfast: ";
-		cin >> item;
-		p.addNewItem(bfast, item);;
+	case 3: 
+		p = new Breakfast;
+		cout << "enter a breakfast: ";
+		getline(cin, item);
+		p->addNewItem(item, quantity, breakfastP);
 		break;
-	case 4: cout << "enter a dessert: ";
-		cin >> item;
-		p.addNewItem(yum, item);;
+	case 4: 
+		p = new Dessert;
+		cout << "enter a dessert: ";
+		getline(cin, item);
+		p->addNewItem(item, quantity, dessertP);
 		break;
-	case 5: cout << "enter a fruit: ";
-		cin >> item;
-		p.addNewItem(fruit, item);;
+	case 5: 
+		p = new Fruit;
+		cout << "enter a fruit: ";
+		getline(cin, item);
+		p->addNewItem(item, quantity, fruitP);
 		break;
-	case 6: cout << "enter a meat: ";
-		cin >> item;
-		p.addNewItem(meat, item);;
+	case 6: 
+		p = new Meat;
+		cout << "enter a meat: ";
+		getline(cin, item);
+		p->addNewItem(item, quantity, meatP);
 		break;
-	case 7: cout << "enter a snack: ";
-		cin >> item;
-		p.addNewItem(snack, item);;
+	case 7: 
+		p = new Snack;
+		cout << "enter a snack: ";
+		getline(cin, item);
+		p->addNewItem(item, quantity, snackP);
 		break;
-	case 8: cout << "enter a vegetable: ";
-		cin >> item;
-		p.addNewItem(veg, item);;
+	case 8: 
+		p = new Vegetables;
+		cout << "enter a vegetable: ";
+		getline(cin, item);
+		p->addNewItem(item, quantity, vegetableP);
 		break;
 	default: break;
 	}
+	p = NULL;
+	menu(p);
 
 }

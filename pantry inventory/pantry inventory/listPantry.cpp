@@ -1,6 +1,6 @@
 #include "PANTRY.h"
 
-void listPantry(pantryCategory p)
+void listPantry(pantryCategory* p)
 {
 
 	cout << "Would you like to see the whole pantry?" << endl;
