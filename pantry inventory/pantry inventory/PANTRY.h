@@ -13,9 +13,11 @@ private:
 	static int totalCount;  //Used for entire pantry
 public:
 	pantryCategory(); //parameters could use inheritance
-	void vectorOfItems(pantryCategory* p);
-	void addNewItem(string i, int q, FILE* f); //use polymorphism
-	void removeItem(string i, FILE* f, pantryCategory* p);
+	void vectorOfItems(string i, int checker, int quantity, vector<string> v, pantryCategory* p, FILE* f);
+	void addNewItem(string i, int q, FILE* f, vector<string> v, pantryCategory* p); //use polymorphism
+	void removeItem(string i, FILE* f, vector<string> v, pantryCategory* p);
+	void setTotalCount(int count) { totalCount = count; }
+	int getTotalCount() { return totalCount; }
 
 	//Stuff added by prof bell --- figure it out and delete later
 	
@@ -89,11 +91,11 @@ public:
 
 
 
-void addInventory(pantryCategory* p);
-void removeInventory(pantryCategory* p);
-void listPantry(pantryCategory* p);
-void clearPantry(pantryCategory* p);
-void menu(pantryCategory* p);
+void addInventory(pantryCategory* p, vector<string> v);
+void removeInventory(pantryCategory* p, vector<string> v);
+void listPantry(pantryCategory* p, vector<string> v);
+void clearPantry(pantryCategory* p, vector<string> v);
+void menu(pantryCategory* p, vector<string> v);
 
 extern FILE *beverageP;
 extern FILE *breadP;
@@ -103,5 +105,6 @@ extern FILE *meatP;
 extern FILE *snackP;
 extern FILE *vegetableP;
 extern FILE *fruitP;
+
 
 #endif

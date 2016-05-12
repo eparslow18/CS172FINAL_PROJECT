@@ -1,7 +1,10 @@
 #include "PANTRY.h"
 
-void clearPantry(pantryCategory* p) //FINISHED
+void clearPantry(pantryCategory* p, vector<string> v) 
 {
+	
+	v.erase(v.begin(), v.end()); //erases contents of vector when user clears pantry
+	p->setTotalCount(0); //clears total count of pantry
 
 	cout << "Are you sure you would you like to clear the pantry?" << endl;
 	cout << "y for yes, n for no: ";
@@ -30,13 +33,13 @@ void clearPantry(pantryCategory* p) //FINISHED
 		
 
 		cout << "pantry cleared, returning to menu . . . " << endl << endl;
-		menu(p);
+		menu(p, v);
 	}
 	
 	else if (answer == 'n')
 	{
 		cout << "Back to the menu . . . " << endl << endl;
-		menu(p);
+		menu(p, v);
 	}
 
 
