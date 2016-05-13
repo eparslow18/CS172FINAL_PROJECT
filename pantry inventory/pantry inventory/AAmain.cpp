@@ -12,6 +12,7 @@
 
 using namespace std;
 
+//continued part of the syntax for declaring the external pointers to the files we will be accessing
 FILE *beverageP;
 FILE *breadP;
 FILE *breakfastP;
@@ -21,7 +22,8 @@ FILE *snackP;
 FILE *vegetableP;
 FILE *fruitP;
 
-bool flag = false;
+bool flag = false; //to read all contents of each file into the pantry vector each time the program is opened, bool is to ensure
+//this is only done once (not every time menu is called)
 
 void menu(pantryCategory* p, vector<string> v)
 {
@@ -109,10 +111,28 @@ void menu(pantryCategory* p, vector<string> v)
 		int option;
 		cin >> option;
 
+		//To check for symbols and chars, or numbers outside the parameters of the options
+		while (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cout << "Not a valid option.  Please choose again ";
+			cin >> option;
+			
+		}
+
 		while (option > 5 || option < 1)
 		{
 			cout << "Not a valid option.  Please choose again ";
-			cin >> option; //add if statement to check for symbols and chars
+			cin >> option; 
+			while (cin.fail())
+			{
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				cout << "Not a valid option.  Please choose again ";
+				cin >> option;
+			}
+			
 		}
 		switch (option % 6)
 		{
@@ -125,6 +145,7 @@ void menu(pantryCategory* p, vector<string> v)
 		case 4: clearPantry(p, v);
 			break;
 		case 5: 
+			//closes all files and ends program from here
 			fclose(beverageP);
 			fclose(breadP);
 			fclose(breakfastP);
@@ -145,11 +166,11 @@ int main()
 {
 	static vector<string> contents; //vector of pantry contents
 	
-	pantryCategory* pantry1 = NULL;
+	pantryCategory* pantry1 = NULL; //Declaring the pantry
 	
 	cout << "Welcome to your pantry! These are your options:" << endl << endl;
 	
-	menu(pantry1, contents);
+	menu(pantry1, contents); //menu is called at the end of nearly all functions, passing the same parameters
 	
 	return 0;
 }

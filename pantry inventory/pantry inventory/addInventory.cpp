@@ -15,13 +15,35 @@ void addInventory(pantryCategory* p, vector<string> v)
 	cout << "7.) Snack" << endl;
 	cout << "8.) Vegetables" << endl;
 	cout << "Enter the number corresponding to the option you want: ";
+
 	int choice;
 	cin >> choice;
+
+	//To check for symbols and chars, or numbers outside the parameters of the options
+	while (cin.fail())
+	{
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cout << "Not a valid option.  Please choose again ";
+		cin >> choice;
+
+	}
+
 	while (choice > 8 || choice < 1)
 	{
 		cout << "Not a valid option.  Please choose again ";
-		cin >> choice; //add if statement to check for symbols and chars
+		cin >> choice;
+		while (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cout << "Not a valid option.  Please choose again ";
+			cin >> choice;
+		}
+
 	}
+
+
 	int quantity;
 	string item;
 
@@ -102,6 +124,6 @@ void addInventory(pantryCategory* p, vector<string> v)
 	default: break;
 	}
 
-	p = NULL;
+	p = NULL; //redeclares the pantry class pointer back to NULL before menu called again
 	menu(p, v);
 }

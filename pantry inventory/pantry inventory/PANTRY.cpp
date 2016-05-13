@@ -1,17 +1,19 @@
 
 #include "PANTRY.h"
 
-int pantryCategory::totalCount = 0;
+int pantryCategory::totalCount = 0; //initializes total count of pantry inventory to 0
 
-pantryCategory::pantryCategory()
+pantryCategory::pantryCategory() //default constructor
 {
 
 }
 
 void pantryCategory::vectorOfItems(string i, int checker, int quantity, vector<string> v, pantryCategory* p, FILE* f)
 {
-	int tracker = 0;
-	//vector<string> Vector;
+	//the checker parameter in this function is what determines which case is called.  Each case called by a different function
+
+	int tracker = 0;//Used in case 2 to make sure "not found in pantry" is only cout-ed in the case that no match was made
+	
 	switch (checker % 4)
 	{
 	case 1: //called by addNewItem
@@ -19,6 +21,10 @@ void pantryCategory::vectorOfItems(string i, int checker, int quantity, vector<s
 		{
 			v.push_back(i);
 		}
+
+		//Potential code for sorting the pantry so that each milk, for example, was next to one another no matter which order
+		//they were inputted.  Couldn't quite figure it out effectively
+
 		//Vector = v;
 		//for (int m = 0; m < Vector.size(); m++)
 		//{
@@ -39,10 +45,10 @@ void pantryCategory::vectorOfItems(string i, int checker, int quantity, vector<s
 	
 		for (int j = 0; j < v.size(); j++)
 		{
-			if (v[j] == i+'\n')
+			if (v[j] == i+'\n') //checks vector of pantry contents to see if the item is in the pantry
 			{
 				v.erase(v.begin() + j); //removes item from entire pantry vector
-				tracker++;
+				tracker++; //to make sure "not found in pantry" is not displayed to screen at the end of this function
 				p->setTotalCount(p->getTotalCount() - 1); //decreases total count by 1
 
 				//creating a temporary vector for each file to check if item is in that particular 
@@ -55,14 +61,13 @@ void pantryCategory::vectorOfItems(string i, int checker, int quantity, vector<s
 				fseek(f, 0, SEEK_SET);
 				while ((ch = fgetc(f)) != EOF) 
 				{
-					
 					ungetc(ch, f);
 					fgets(item, 100, f); //reads in line until end of line or until 100 char.'s is reached in line
 					Temp.push_back(item);//adds line to vector
 				}
 				for (int w = 0; w < Temp.size(); w++)
 				{
-					if (Temp[w] == i+'\n')
+					if (Temp[w] == i+'\n') //goes into this function if a match is made in the temporary vector
 					{
 						Temp.erase(Temp.begin() + w);
 
@@ -98,32 +103,32 @@ void pantryCategory::vectorOfItems(string i, int checker, int quantity, vector<s
 						{
 							f = fopen("Vegetables.txt", "w+");
 						}
-						//fputc(' ', f); //puts space before word to properly display in program
+						
 						for (int x = 0; x < Temp.size(); x++)
 						{
 							for (int k = 0; k < Temp[x].length(); k++) //appends each character into the file
 							{
 								fputc(Temp[x][k], f);
 							}
-							fputc('\n', f); //end line within text file after each item is inputted
 						}
+						fclose(f); //closes the file that was edited in order to save changes before returning to menu
 					}
 				}
-				
-				
-				cout << i << " was removed." << endl;
+
+				cout << endl << "One " << i << " was removed." << endl;
 
 				break;
 			}
 		}
-		if (tracker == 0)
+		if (tracker == 0) //if no match was found in the vector of entire pantry contents
 			cout << "Item was not found in your pantry." << endl;
+
 		menu(p, v);
 		break;
 	case 3: //called by listPantry
 		cout << "Your pantry contains " << totalCount << " items:" << endl;
 		for (int k = 0; k < v.size(); k++)
-			cout << v[k] << endl;
+			cout << v[k] << endl; //displays vector of entire contents of pantry
 		break;
 	default:
 		break;
@@ -134,18 +139,19 @@ void pantryCategory::addNewItem(string i, int q, FILE *f, vector<string> v, pant
 {
 	for (int j = 0; j < q; j++) //loop through quantity of items
 	{
-		//fputc(' ', f); //puts space before word to properly display in program
 		for (int k = 0; k < i.length(); k++) //appends each character into the file
 		{
 			fputc(i[k], f);
 		}
 		fputc('\n', f); //end line within text file after each item is inputted
 	}
+	fclose(f); //closes file to save changes made in the file before returning to menu
+
 	totalCount = totalCount + q;
-	vectorOfItems(i, 1, q, v, p, f);
+	vectorOfItems(i, 1, q, v, p, f); //calls vectorOfItems with checker = 1 so that case 1 is called in order to add the new items
+	//into the vector of all the pantry items
 }
 void pantryCategory::removeItem(string i, FILE* f, vector<string> v, pantryCategory* p)
 {
-	vectorOfItems(i, 2, 1, v, p, f);
-
+	vectorOfItems(i, 2, 1, v, p, f); //called with checker = 2 so case 2 is called in order to remove items if found in pantry
 }

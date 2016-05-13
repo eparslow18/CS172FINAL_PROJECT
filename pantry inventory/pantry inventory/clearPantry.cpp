@@ -3,8 +3,7 @@
 void clearPantry(pantryCategory* p, vector<string> v) 
 {
 	
-	v.erase(v.begin(), v.end()); //erases contents of vector when user clears pantry
-	p->setTotalCount(0); //clears total count of pantry
+	
 
 	cout << "Are you sure you would you like to clear the pantry?" << endl;
 	cout << "y for yes, n for no: ";
@@ -20,6 +19,7 @@ void clearPantry(pantryCategory* p, vector<string> v)
 
 	if (answer == 'y')
 	{
+		//Opens the files as new, empty files if they already exist - if not existing, creates the blank file
 		beverageP = fopen("Beverage.txt", "w+");
 		breadP = fopen("Bread.txt", "w+");
 		breakfastP = fopen("Breakfast.txt", "w+");
@@ -29,7 +29,8 @@ void clearPantry(pantryCategory* p, vector<string> v)
 		snackP = fopen("Snack.txt", "w+");
 		vegetableP = fopen("Vegetables.txt", "w+");
 
-
+		v.erase(v.begin(), v.end()); //erases contents of vector when user clears pantry
+		p->setTotalCount(0); //clears total count of pantry
 		
 
 		cout << "pantry cleared, returning to menu . . . " << endl << endl;

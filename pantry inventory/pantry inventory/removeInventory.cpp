@@ -3,7 +3,6 @@
 
 void removeInventory(pantryCategory* p, vector<string> v)
 {
-
 	cout << "Of the following categories, from which would you like to remove?" << endl;
 	cout << "1.) Beverage" << endl;
 	cout << "2.) Bread" << endl;
@@ -14,12 +13,30 @@ void removeInventory(pantryCategory* p, vector<string> v)
 	cout << "7.) Snack" << endl;
 	cout << "8.) Vegetables" << endl;
 	cout << "Enter the number corresponding to the option you want: ";
+
 	int choice;
 	cin >> choice;
+
+	//To check for symbols and chars, or numbers outside the parameters of the options
+	while (cin.fail())
+	{
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cout << "Not a valid option.  Please choose again ";
+		cin >> choice;
+	}
+
 	while (choice > 8 || choice < 1)
 	{
 		cout << "Not a valid option.  Please choose again ";
-		cin >> choice; //add if statement to check for symbols and chars
+		cin >> choice;
+		while (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cout << "Not a valid option.  Please choose again ";
+			cin >> choice;
+		}
 	}
 	
 	string item = "";

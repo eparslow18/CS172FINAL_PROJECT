@@ -14,7 +14,7 @@ private:
 public:
 	pantryCategory(); //parameters could use inheritance
 	void vectorOfItems(string i, int checker, int quantity, vector<string> v, pantryCategory* p, FILE* f);
-	void addNewItem(string i, int q, FILE* f, vector<string> v, pantryCategory* p); //use polymorphism
+	void addNewItem(string i, int q, FILE* f, vector<string> v, pantryCategory* p);
 	void removeItem(string i, FILE* f, vector<string> v, pantryCategory* p);
 	void setTotalCount(int count) { totalCount = count; }
 	int getTotalCount() { return totalCount; }
@@ -97,6 +97,8 @@ void listPantry(pantryCategory* p, vector<string> v);
 void clearPantry(pantryCategory* p, vector<string> v);
 void menu(pantryCategory* p, vector<string> v);
 
+
+//This declares pointers to each food group file, and makes it external so it is accessible through the entire program
 extern FILE *beverageP;
 extern FILE *breadP;
 extern FILE *breakfastP;
